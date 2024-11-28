@@ -10,11 +10,28 @@ body {
   color: white;
   overflow: hidden;
 }
+#game-name {
+  position: fixed;
+  top: 250px;
+  margin-left: 500px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(135, 192, 213, 0.5);
+  text-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5, 0 0 30px #ff6ec4;
+  z-index: 100;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 
 /* Game Container */
-#game-container {
+#traffic-racer-container {
   position: relative;
-  width: 400px;
+  width: 90%; /* Adjust to fit screen */
+  max-width: 400px; /* Limit to maximum width */
   height: 650px;
   margin: 20px auto;
   background-color: #1b1b1b;
@@ -24,20 +41,20 @@ body {
 }
 
 /* Game Area */
-#game-area {
+#racing-track {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
 /* Player Car */
-#player-car {
+#player-vehicle {
   position: absolute;
   bottom: 20px;
   left: 175px;
   width: 50px;
   height: 80px;
-  background-color: rgba(128, 0, 128, 0.5);
+  background-color: rgba(214, 58, 219, 0.5);
   background-image: url(/assets/images/25622586c82df8208d074a677cfb80c2a440e5.png);
   background-size: contain;
   background-position: center;
@@ -45,12 +62,24 @@ body {
   border-radius: 10px;
 }
 
+#player-vehicle,
+.obstacle {
+  width: 10%; /* Adjust to track width */
+  max-width: 50px;
+  height: 15%; /* Adjust to track height */
+  max-height: 80px;
+  border-radius: 10px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Obstacle */
 .obstacle {
   position: absolute;
   width: 50px;
   height: 80px;
-  background-color: rgba(255, 155, 155, 0.5);
+  background-color: rgba(204, 99, 99, 0.5);
   background-image: url(/assets/images/red-car.png);
   background-size: contain;
   background-position: center;
@@ -59,7 +88,7 @@ body {
 }
 
 /* Score Board */
-#score-board {
+#score-panel {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -67,10 +96,12 @@ body {
   padding: 10px;
   background-color: black;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5, 0 0 30px #ff6ec4;
+  border-radius: 5px;
 }
 
 /* Buttons in the menu */
-#game-menu {
+#game-controls {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -78,12 +109,12 @@ body {
   text-align: center;
 }
 
-#game-menu button {
+#game-controls button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 18px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #f200ff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -91,8 +122,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#game-menu button:hover {
-  background-color: #0056b3;
+#game-controls button:hover {
+  background-color: #7a0f6e;
 }
 
 /* Hide the game menu during play */
